@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Safwat Journals — Poems, Essays & Car Writing</title>
+    <meta name="description" content="Safwat Journals — a personal blog of poems, essays and automotive history. Poetry, music commentary and motoring stories." />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Safwat Journals — Poems, Essays & Car Writing" />
+    <meta property="og:description" content="Safwat Journals — a personal blog of poems, essays and automotive history. Poetry, music commentary and motoring stories." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://safwat1234.github.io/" />
+    <!-- Replace /og-image.png with a real image path if you add one -->
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Performance: preconnect to Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN (defer so DOM parses first) -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+
+    <style>
+        /* Accessibility helpers */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .skip-link {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            background: #065f46; /* emerald-700 */
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            transform: translateY(-120%);
+            transition: transform .2s ease-in-out;
+            z-index: 50;
+        }
+        .skip-link:focus {
+            transform: translateY(0);
+            outline: 3px solid #a7f3d0; /* emerald-200 */
+        }
+        /* Custom font application and background */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* Light background for easy reading */
+        }
+        /* Custom styles for post card hover effect */
+        .post-card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .post-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.1); /* Subtle shadow based on theme color */
+        }
+        /* Style for pre-formatted text to preserve poem/prose line breaks */
+        .poem-content {
+            white-space: pre-wrap; /* Preserve whitespace and line breaks, but wrap long lines */
+            font-family: inherit; /* Use the main body font */
+            text-align: left; /* Keep poem alignment standard */
+            line-height: 1.6;
+        }
+        /* Specific styling for prose content to give it a slightly different look than poetry */
+        .prose-content {
+            white-space: pre-wrap;
+            font-family: 'Times New Roman', serif; /* Use a serif font for prose for contrast */
+            text-align: justify;
+            line-height: 1.75;
+            padding: 1rem;
+            background-color: #fcfcfc;
+            border-left: 4px solid #34d399; /* Emerald border */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Skip link for screen reader / keyboard users -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-10" role="banner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-emerald-600 tracking-wider">Safwat Journals</a>
+            <nav class="hidden md:flex space-x-8" aria-label="Primary">
+                <a href="index.html" class="text-gray-600 hover:text-emerald-600 transition duration-150 font-medium">Home</a>
+                <a href="#poems" class="text-gray-600 hover:text-emerald-600 transition duration-150 font-medium">Poems</a>
+                <a href="#writings" class="text-gray-600 hover:text-emerald-600 transition duration-150 font-medium">Writings</a>
+                <a href="#cars" class="text-gray-600 hover:text-emerald-600 transition duration-150 font-medium">Cars</a>
+                <a href="#about" class="text-gray-600 hover:text-emerald-600 transition duration-150 font-medium">About</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-emerald-600 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
+                <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <nav id="mobile-menu" class="hidden md:hidden" aria-label="Mobile primary">
+            <a href="index.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600">Home</a>
+            <a href="#poems" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600">Poems</a>
+            <a href="#writings" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600">Writings</a>
+            <a href="#cars" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600">Cars</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600">About</a>
+        </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <!-- Main Blog Header / Featured Post Area -->
+        <section class="bg-emerald-600 py-16 sm:py-20 text-white shadow-xl">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h1 class="text-4xl sm:text-5xl font-serif font-bold leading-tight mb-4">
+                    Life Through My Eyes: An attempt at verse and writings from my scattered mind
+                </h1>
+                <div class="mt-8">
+                    <!-- Latest Post link (UPDATED) -->
+                    <a href="#cars" class="text-sm font-semibold text-white border-2 border-white px-4 py-2 rounded-full hover:bg-white hover:text-emerald-600 transition duration-300">
+                        Read Latest Post: Big Healey and the Economy
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights Section (Featured Content) -->
+        <section class="py-16 sm:py-24 bg-white" aria-labelledby="highlights-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 id="highlights-heading" class="text-4xl font-bold text-center text-gray-900 mb-4">Editor's Highlights</h2>
+                <p class="text-lg text-center text-gray-500 mb-12">The three most essential reads.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 1. Highlight Card for Mr. Tambourine Man -->
+                    <a href="#writings" class="block col-span-1 bg-gray-100 p-6 rounded-xl shadow-lg border-t-4 border-pink-500 post-card-hover">
+                        <span class="text-xs font-semibold text-pink-600 uppercase tracking-wider">Essay & Analysis</span>
+                        <h3 class="mt-2 text-xl font-bold text-gray-900">Mr. Tambourine Man Analysis</h3>
+                        <p class="mt-2 text-gray-600 text-sm italic line-clamp-3">
+                            An analysis of Bob Dylan's 1965 classic as a reflection on fame, a fractured self, and the futility of chasing a lost past...
+                        </p>
+                        <p class="mt-4 text-xs text-gray-400">November 2, 2025</p>
+                    </a>
+
+                    <!-- 2. Highlight Card for Draconid -->
+                    <a href="#poems" class="block col-span-1 bg-gray-100 p-6 rounded-xl shadow-lg border-t-4 border-emerald-500 post-card-hover">
+                        <span class="text-xs font-semibold text-emerald-600 uppercase tracking-wider">Poetry</span>
+                        <h3 class="mt-2 text-xl font-bold text-gray-900">Draconid</h3>
+                        <p class="mt-2 text-gray-600 text-sm italic line-clamp-3">
+                            "I bid farewell to the old dragon's den. Where the waters shone and fell like the stars of heaven's unseen fields..."
+                        </p>
+                        <p class="mt-4 text-xs text-gray-400">November 2, 2025</p>
+                    </a>
+
+                    <!-- 3. Highlight Card for Seabird -->
+                    <a href="#poems" class="block col-span-1 bg-gray-100 p-6 rounded-xl shadow-lg border-t-4 border-emerald-500 post-card-hover">
+                        <span class="text-xs font-semibold text-emerald-600 uppercase tracking-wider">Poetry</span>
+                        <h3 class="mt-2 text-xl font-bold text-gray-900">Seabird</h3>
+                        <p class="mt-2 text-gray-600 text-sm italic line-clamp-3">
+                            "Out of the green sea, she rose- A nymph from a man's story, She was like the purple twilight at day's close..."
+                        </p>
+                        <p class="mt-4 text-xs text-gray-400">November 2, 2025</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poems Section -->
+        <section id="poems" class="py-16 bg-gray-100" aria-labelledby="poems-heading">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Collapsible Header for Poems -->
+                <div class="flex justify-between items-center cursor-pointer mb-10 border-b-2 border-emerald-300 pb-4 toggle-header" data-target="poems-content" role="button" tabindex="0" aria-controls="poems-content" aria-expanded="true">
+                    <h2 id="poems-heading" class="text-3xl font-bold text-gray-900">The Poetry Corner</h2>
+                    <svg id="poems-icon" class="w-6 h-6 transform transition-transform duration-300 rotate-180 text-emerald-600" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Toggle poems</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+
+                <!-- Content Wrapper for Poems (initially visible) -->
+                <div id="poems-content" class="toggle-content">
+                    <!-- START OF POEM CONTENT: Draconid -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="draconid-title">
+                        <h3 id="draconid-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Draconid</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                Another one of my own poems which I like. The dragon I like to imagine was not surpassed by many.
+                            </p>
+                            <pre class="poem-content text-gray-700 text-base mx-auto">
+I bid farewell to the old dragon's den.
+
+Where the waters shone and fell like the stars of heaven's unseen fields.
+
+Her hollow from rock face to gorge was my cosmos, exhausted and spent.
+
+The dragon, her great spine like stalactite had long ago keeled.
+
+Yet under her heavy wing of celestial might was my abode.
+
+Where I slept hand on heart, & heart lost in dreams of Gaia and Uranus.
+
+There, I imagined the tapestry of the stars and how the stellar-spine in the sky, milky-white flowed.
+
+I never saw the dragon, alive with wings stretched from land to heaven's end but I imagine, Nec Pluribus Impar
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF POEM CONTENT: Draconid -->
+
+                    <!-- START OF POEM CONTENT: Sands -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="sands-title">
+                        <h3 id="sands-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Sands</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                An ode to surviving despite hardship and the futile nature of the world.
+                            </p>
+                            <pre class="poem-content text-gray-700 text-base mx-auto">
+What news do you bring from the land of sands, O Bedouin, O bedouin?
+
+The Oases bear no date palms, and my child died in my arm last eve.
+
+Why do you cry dear musafir , what sorrow haunts your tale?
+
+My camel- his knees bear no strenght, yet I shall carry on alone. 
+
+Why do you close your eyes my beloved wayfarer, what is it you wish not to see?
+
+I wish to see the world in creation deep but I lost my keffiyeh and the shamal's sand shall get in my eyes
+
+Who do you pray for ummi, clenching your rosary harder than your children?
+
+I pray for safe passage of my child across the desert harsh.
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF POEM CONTENT: Sands -->
+
+                    <!-- START OF POEM CONTENT: Seabird -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="seabird-title">
+                        <h3 id="seabird-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Seabird</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                Perhaps the only one of my poems I like.
+                            </p>
+                            <pre class="poem-content text-gray-700 text-base mx-auto">
+Out of the green sea, she rose-
+A nymph from a man's story,
+She was like the purple twilight at day's close.
+She longed to fly, to the edge of the sea.
+
+Yet, her dream disappears like seafoam left to dry,
+Never touching the nest of the albatross.
+She remains an old sailor's shanty-
+But can she ever cross?
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF POEM CONTENT: Seabird -->
+
+                    <!-- START OF POEM CONTENT: Signs -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="signs-title">
+                        <h3 id="signs-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Signs</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                My miserably failed attempt at surrealist poetry. This one is also political in stance, but I shall leave it up to the reader to decide.
+                            </p>
+                            <pre class="poem-content text-gray-700 text-base mx-auto">
+I found myself in front of a hospital bed.
+In the dim light, I asked him him his name-
+He said, "Woody"
+And tried to point to his string set.
+
+I found myself in a ring.
+The man said "Cassius" was his name.
+But his rhymes felt rude
+I think he lost his wings.
+
+I found myself in front of an oracle,
+He said his name was "George" .
+And he went off about some big brother of his-
+I called him mad.
+
+I found myself in front of a sign-
+Sign was red and bronzer stained.
+Then, it all started to make sense,
+I think I chose the sinner's saint.
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF POEM CONTENT: Signs -->
+
+                    <!-- START OF POEM CONTENT: Revolution? -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="revolution-title">
+                        <h3 id="revolution-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Revolution?</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                I tried to write within the folk tradition, but it is a bit hypocritical considering my privileged background. I think this is my most political poem/song.
+                            </p>
+                            <pre class="poem-content text-gray-700 text-base mx-auto">
+Well you better not tarry.
+You better meet their gaze.
+You better look into the valley.
+And see them looking back at your face. 
+
+You see their pain, you call it anger.
+You hear their shouts, you call it envy.
+You don't see their hunger.
+Your waters run muddy. 
+
+You sit behind your private glass house and sip on your whiskey.
+While they stand out in the rain,
+And their voices get raspy.
+But you ain't gonna let them put a stain on your name. 
+
+So you look into that valley again.
+You see them gather but you dont care.
+You think they're insane-
+They can't touch a single hair on you. 
+
+You know, they ain't gonna fight for long.
+They gotta survive....
+They're gonna go back to the mines and sing their worker's songs.
+But you, you can't sleep at night in your cashmere sheets, long as you're alive.
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF POEM CONTENT: Revolution? -->
+
+                    <!-- START OF POEM CONTENT: Night Vagabond -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="night-vagabond-title">
+                        <h3 id="night-vagabond-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Night Vagabond</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                A thought I had which I wrote down in verse
+                            </p>
+                            <pre class="poem-content text-gray-700 text-base mx-auto">
+You ever wonder where their bodies go?
+When they die on the pavement in the scalding night.
+I know they bury their children-
+But who remains to bury them?
+
+
+The vagabonds, the lepers and the fakirs,
+The night was theirs.
+But who mourns them?
+When the night swallows them- bone and sinew...
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF POEM CONTENT: Night Vagabond -->
+
+                    <!-- START OF POEM CONTENT: Pieces -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="pieces-title">
+                        <h3 id="pieces-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Pieces</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-xl mx-auto">
+                            <pre class="poem-content text-gray-700 text-base mx-auto">
+Every piece hit the ground, and a murmur followed. 
+
+Like- a jigsaw puzzle in reverse. 
+
+With each fall, he felt more hollow- 
+
+but resigned to his fate, there was no one he could curse.
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF POEM CONTENT: Pieces -->
+
+                    <!-- START OF POEM CONTENT: Rock Opera Alley -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="rock-opera-title">
+                        <h3 id="rock-opera-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Rock Opera Alley</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025</p>
+
+                        <div class="border border-orange-400 bg-orange-50 text-orange-700 p-3 rounded-md mb-6 max-w-xl mx-auto text-sm">
+                            <strong>Trigger Warning:</strong> This poem contains sensitive material related to mental distress and self-harm. If you are affected, consider seeking support from local resources.
+                        </div>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                I guess I tried to write like early 60s Dylan here. The main character isn't anyone in particular, I think of it as an amalgam of the dread of modern life.
+                            </p>
+
+                            <pre class="poem-content text-gray-700 text-base mx-auto">
+He's writing a rock opera.
+But it just ain't good.
+He's trying to use his camera.
+But the people- they just ain't in the mood.
+
+He goes home and he goes to bed.
+But his socks they just ain't clean.
+He thinks of the lady in red.
+And he- he falls asleep thinking he's in a scene.
+
+A scene? The only scene he's in is obscene.
+He wakes up and he thinks he's advanced.
+But he can't find his denim jeans.
+The girls-they just don't give him a chance.
+
+He goes to the rally.
+But he gets blocked by the crowd.
+He doesn't have a white picket fence so he stands in the alley.
+The game- he just can't play it so loud.
+
+He goes to the bank and he takes out a loan.
+He looks in the mirror, thinks his life's a bust. 
+And back home he loads the chamber.
+The world- it just wont bother him no more.
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF POEM CONTENT: Rock Opera Alley -->
+
+                    <!-- START OF POEM CONTENT: Institution -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="institution-title">
+                        <h3 id="institution-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Institution</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-xl mx-auto">
+                            <pre class="poem-content text-gray-700 text-base mx-auto">
+I hear the sound of trains pass me by,
+As I wander through these halls-
+Hallowed ground for few, and for many a cause of sigh.
+The doctors, they make me feel small.
+
+Madmen, wildmen- are they my company?
+I see them and think of myself as different,
+But even they think me funny;
+The mirror on the wall paints me as a demented haggard in a downward descent.
+
+The mirrors i call my eyes reflect otherwise.
+I was not always like this- 
+A revolutionary I think I used to be, I fought for those, who are smaller in size.
+I never failed to rise to the occasion and I never let a just cause die.
+
+Perhaps that is why they caught me and severed my brain-
+Did I try to resist it-that memory escapes my mind.
+They tried to make me another cart in the train,
+But they left my heart behind. 
+
+Today I broke free of my chains-
+No longer am I their thrall.
+I see them searching for me-even in the storm drains;
+But they do not know I wander through their halls.
+
+But I feel my fight is all for naught
+How long shall I wander?
+Is everything fraught?
+Is the chair my only respite- I ponder
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF POEM CONTENT: Institution -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Writings Section (Politics & General Commentary) -->
+        <section id="writings" class="py-16 sm:py-24 bg-white" aria-labelledby="writings-heading">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Collapsible Header for Writings -->
+                <div class="flex justify-between items-center cursor-pointer mb-10 border-b-2 border-emerald-300 pb-4 toggle-header" data-target="writings-content" role="button" tabindex="0" aria-controls="writings-content" aria-expanded="true">
+                    <h2 id="writings-heading" class="text-3xl font-bold text-gray-900">Essays and Commentary</h2>
+                    <svg id="writings-icon" class="w-6 h-6 transform transition-transform duration-300 rotate-180 text-emerald-600" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Toggle writings</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+
+                <!-- Content Wrapper for Writings (initially visible) -->
+                <div id="writings-content" class="toggle-content">
+                    <!-- START OF WRITINGS CONTENT: Greenwich Village (Newest) -->
+                    <article class="bg-gray-100 p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="greenwich-title">
+                        <h3 id="greenwich-title" class="text-2xl font-bold text-pink-800 mb-2 text-center">Greenwich Village</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025 | Category: Music Commentary</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-3xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                A critical look at the narrative that a single artist ended the thriving folk scene in Greenwich Village.
+                            </p>
+                            <pre class="prose-content text-gray-700 text-base mx-auto">
+To say Bob Dylan was the death of the Greenwich village folk scene is reductionist. It reduces the vibrant 20 year folk tradition of that neighborhood to just the play theatre of a superstar in infancy.
+The greenwich folk scene had existed and had been the voice of counterculture for a decade or more when Dylan arrived, and kept existing and evolving until the mid 70s. Yes, Dylan's contribution to that neighborhood's musicality is certainly unignorable and Dylan did have a hand in its fate. But Dylan's superstardom and shift to electric guitar did not kill the folk scene.
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF WRITINGS CONTENT: Greenwich Village -->
+
+                    <!-- START OF WRITINGS CONTENT: Inside Llewyn Davis -->
+                    <article class="bg-gray-100 p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="llewyn-title">
+                        <h3 id="llewyn-title" class="text-2xl font-bold text-pink-800 mb-2 text-center">My thoughts on Inside Llewyn Davis</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025 | Category: Film Commentary</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-3xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                An analysis of the Coen Brothers' folk odyssey, focusing on the symbolism of the cats, the cyclical narrative structure, and the ultimate acceptance of life's mediocrity.
+                            </p>
+                            <pre class="prose-content text-gray-700 text-base mx-auto">
+My interpretation of inside llewyn davis is that its a personal journey of healing or accepting. The first scene being a cryptic version of the last scene is perhaps a reference to traditional folk song structures. The way at the end Llewyn doesn't repeat his past mistake of letting the cat out, and then him managing to sing the duet alone is a sign of him accepting the death of his partner/friend at last. I like how the movie can be interpreted in so many ways. Him being overshadowed by Dylan's arrival and him saying "Au revoir" at the end may seem bleak. But to me, its a suggestion that he has accepted his lot in life. I think the ending is trying to say that mediocrity isn't necessarily a bad thing. But, in Llewyn's personal life, the movie ends with most of his relationships being good, suggesting that no matter he shunned people away, they still love him. The Gorfeins forgive him and bring him back into their home, Jean gets him the opening/final scene gig(no matter how she got it) and him trying to go back to the merchant marines is him accepting that his father's life of mediocrity wasn't such a a bad thing after all.
+
+I think the cat(s) represent Llewyn. The tom cat escapes at the start but Llewyn manages to catch him but then it leaves Llewyn's side for the rest of the story. And the other girl cat replaces it. But Llewyn ofcourse abandons and then runs over the girl cat later on in a dreamlike scene. I think that scene is Llewyn metaphorically giving up on chasing fame after what happens in chicago. The girl cat was him clinging on to some hope of finding fame. But it is when he gives that up, things though still bleak start to look up for him. He gets the gig we saw at the start. Jean is less mean to him. The gorfeins take him back. He is able to overcome his partner's death. The cat returning is metaphorical of Llewyn accepting his fate I think.
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF WRITINGS CONTENT: Inside Llewyn Davis -->
+
+                    <!-- START OF WRITINGS CONTENT: Mr. Tambourine Man -->
+                    <article class="bg-gray-100 p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="tambourine-title">
+                        <h3 id="tambourine-title" class="text-2xl font-bold text-pink-800 mb-2 text-center">My thoughts on Bob Dylan's Mr. Tambourine Man</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025 | Category: Music Commentary</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-3xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                An analysis of Bob Dylan's 1965 classic as a reflection on fame, a fractured self, and the futility of chasing a lost past, framed as the self-dialogue of an insomniac.
+                            </p>
+                            <pre class="prose-content text-gray-700 text-base mx-auto">
+Mr. Tambourine Man is often considered just a song about drugs or about chasing some elusive muse or chasing death itself for eternal freedom but to me, it always felt like a psychological self-dialogue of a weary insomniac. 
+
+Mr. Tambourine Man is a sort of dialogue between two egos within one person. There is the tambourine man- the carefree harbinger free from the shackles of this world who can still dream. And there is the weary narrator or the singing voice. He is the other consciousness within that mind. He wants to merge with his other self, the tambourine man but everytime he reaches out to that self he fails, whether from weariness or a failure to hold on. "My senses have been stripped
+My hands can't feel to grip
+My toes too numb to step"
+Everytime he is reminded of the physical or material world holding him back. Not allowing him to transcend. All he can do is stay there chasing the tambourine man. 
+
+He thinks of himself as he lay in bed, an insomniac as a "shadow" chasing the tambourine man. "And if you hear vague traces of skipping reels of rhyme
+To your tambourine in time
+It's just a ragged clown behind
+I wouldn't pay it any mind
+It's just a shadow you're seeing that he's chasing" The elusive tambourine man is of course another part of his own mind but he can never reach it. Hence, he calls himself a "ragged clown", so in some part of his mind even he knows how chasing the tambourine man is a futile cause. 
+
+The last paragraph, "With all memory and fate, driven deep beneath the waves" is him accepting the loss of his previous self. Its him accepting that he can only chase the tambourine man but never latch on. Then, "Let me forget about today until tomorrow" is him accepting that he won't ever reach the tambourine man but always keep chasing him and its his final resignation to this fate: its him accepting to survive another day in the shadow of an unreachable version of himself with whom there will be no reunion. 
+
+At the surface, it may seem like just surrealist imagery or the chasing of a muse but I think its Dylan writing about his own feelings within a layer of his classic surrealism. Its his old self, the boy from Minnesota who is the tambourine man. That self didn't yet know what the vast world held and he was all the better for it and the narrator is the superstar Bob Dylan struggling to cope with his fame and the tours and his private life or lack thereof around the time he wrote this song in the mid 60s. Maybe in that time he tried to reach out to his former self but failed and this song is in some way reflective of that. 
+
+But in a broader sense, it says that no matter how hard we try, we will fail if we attempt to grip onto our past self for its not truly there anymore. We chase the past like a cat would chase its own tail. It is a futile chase, we wander behind our past selves carried by the music, resigned to a neverending pursuit. 
+
+It could be all that or maybe its just about an acid trip for all we know?
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF WRITINGS CONTENT: Mr. Tambourine Man -->
+
+                    <!-- START OF WRITINGS CONTENT: Pale Dog Blues -->
+                    <article class="bg-gray-100 p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="pale-dog-title">
+                        <h3 id="pale-dog-title" class="text-2xl font-bold text-pink-800 mb-2 text-center">Pale Dog Blues</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025 | Category: Short Fiction</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-2xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                A piece of surreal prose exploring themes of self-identity, delusion, and the confrontation of mortality during a heat-induced hallucination.
+                            </p>
+                            <pre class="prose-content text-gray-700 text-base mx-auto">
+The air was thick, almost like fog but it was humid and very warm. I walked behind a hearse today. I don't like saying hearse, it paints a certain catholic picture of a black sedan which I'm not entirely comfortable with. I walked behind a freezing van today, I didn't want to follow it, i tried to take the other way but it somehow got ahead of me. I thought to myself, could It be my father in there? But How? He was okay this morning. I tried to go through a line of parked cars. I scraped up against our old car while doing so. I hadn't seen that thing in so long I thought. It looked faded and rustworn I thought, when I noticed the white dog. It was the same one that lived downstairs. It used to terrify me when I was little. How it used to howl, still sends a shiver down my spine. What was it doing there, it must have been long dead? It looked almost translucent in the mire. Was my mind playing tricks on me? Was I delirious from the heat? I backed out fearing the pale dog and got stuck behind that van again. I got a glance of the body through the condensed, foggy windows. I recognised its face: it seemed to be mine. When I got home, I tried washing up thinking I had gone mad from the heat but when I tried to spray water on my face, my fingers sank right through....
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF WRITINGS CONTENT: Pale Dog Blues -->
+
+                    <!-- Placeholder for future writings -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center text-gray-500 mb-8">
+                        <p class="text-lg font-medium">Add your thoughts on Politics and general topics here!</p>
+                    </div>
+
+                    <a href="#writings" class="mt-8 inline-block bg-emerald-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-emerald-700 transition duration-300 transform hover:scale-105">
+                        View All Writings
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION: Cars Corner -->
+        <section id="cars" class="py-16 bg-gray-100" aria-labelledby="cars-heading">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Collapsible Header for Cars -->
+                <div class="flex justify-between items-center cursor-pointer mb-10 border-b-2 border-emerald-300 pb-4 toggle-header" data-target="cars-content" role="button" tabindex="0" aria-controls="cars-content" aria-expanded="true">
+                    <h2 id="cars-heading" class="text-3xl font-bold text-gray-900">Cars</h2>
+                    <svg id="cars-icon" class="w-6 h-6 transform transition-transform duration-300 rotate-180 text-emerald-600" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Toggle cars</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+
+                <!-- Content Wrapper for Cars (initially visible) -->
+                <div id="cars-content" class="toggle-content">
+                    <!-- START OF CARS CONTENT: Big Healey and the Economy (NEWEST) -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="big-healey-title">
+                        <h3 id="big-healey-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Big Healey and the Economy</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025 | Category: Auto History</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-3xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                An economic and automotive history of the iconic Austin-Healey series and the decline of the British car industry.
+                            </p>
+                            <pre class="prose-content text-gray-700 text-base mx-auto">
+Britain- the isle where once the industrial revolution had kicked off is now a mere footnote in the automotive industry but that wasn't always the case. There was a time when British cars ruled the world. It was the 1950s and there was a new Queen in Buckingham Palace & the empire still had some grip over her colonies. Even, though the decolonisation process had begun, Britain's colonies still relied on the Empire's industries and technology. At the time, The United Kingdom was responsible for more than half of the car exports globally. British cars were ruling the world and domestically British companies were at their peak. 
+
+In those days British Motoring was split into essentially two giants- BMC & Leyland. Names such as Austin, Morris, Mini, MG & Jaguar were under the banner of BMC while the latter had Leyland Trucks, Rover and Triumph. Competition was fierce between these corporations and as it has been proved time and time again competition breeds innovation. 
+
+Austin, the biggest brand under the BMC banner had designed a sports car after the war called the A90 Atlantic. It was small & peppy and unlike the competition it was an actual post war design which is to say "modern" whereas its competition the Triumph Roadster which though designed in 1946 resembled something out of the 1930s. The A90 was faster than its Triumph rival and smaller but it just lacked that "muscle" factor which a British roadster needs. 
+
+Enter: Donald Healey. Donald Healey was an RAF flight instructor, automobile designer and Monte-Carlo winning racing driver. Before the second world war he had worked for Triumph designing a racing version of their famous "Dolomite". After the war Healey struck out on his own creating the beautiful Healey "Silverstone". The Silverstone was so good the Americans particularly Nash, hired Healey to build them a sports car, the Famous "Nash-Healeys" as they were but all of Healey's ventures so far had one major issue: They were all too expensive. 
+
+He wanted a sports car that was firstly affordable and secondly could do 100 mph. So Healey began working on a design which he presented at the Earl's court motor show in 1952. Austin's head Baron Leonard Lord loved Healey's design so much that he struck a deal with Healey right then and there. And why wouldn't he? The Austin-Healey as it would be known is simply beautiful. Very rarely in car design does the "rear wedge" style work but the Healey is an exception. The rear wedge styling gives the car an almost aggresive, animalian look. It looks like a feline apex predator ready to pounce or somehow take flight but the classical headlights and the iconic Healey grille a staple of all his cars gives it an air of opulence which is hard to compete with. Its the perfect blend of flowing style and "muscle". 
+
+Now on to the technicals, Healey had designed the car and Austin had given its mechanical components based on the A90 but the body was built by Jensen, another now defunct British sportscar maker and sent to Austin's longbridge factory where a small but potent 2.6 litre 4 cylinder was fitted. Thus was born the Austin-Healey 100. The first of the famous "big Healeys" 
+
+The 100 was a commercial success and a proper British roadster which outshined its competition the MG A and the Triumph TR2, both of whom were good cars in there own right. It was so good it was discontinued and replaced within 3 years of production in 1956, for the 100-6 which was virtually identical on the outside to the 100 but was better mechanically. It had 2.6 litre 6- cylinder out of the Austin Westminster. The 100-6 was an improvement upon the 100 and the 3000, the final "Big Healey" introduced in 1959 was the ultimate British sportscar of the era. The 3000 called so for its 3-litre 6 cylinder was faster, even more agressive looking and had introduced creature comforts to the Austin Healey line up. The 3000 was a roadracer like its predecessors but also a grand tourer. It would enjoy a long production cycle of 8 years and is probably the car you think of when I say "British Roadster". But then why did it die out?
+
+Well, to understand that our automotive story needs to turn into an economic one. I started by talking of Britain's industrial might and for a time as the other european nations completely decimated by the war struggled to rebuild. Britain had flourished but by the 60s. Germany, Italy and even France had completely new factories and the once mighty kingdom just couldn't keep up. Couple that with the constant labour strikes and shortages aswell as the fallout of the Suez crisis. One begins to understand why British cars eventually failed and why the government went ahead with Nationalization of the car industry. So, by 1967 BMC and Leyland had merged to form British Leyland and Austin who by now had complete control over Austin-Healey after Donald Healey's departure to work with Jensen decided to discontinue the entire Austin-Healey lineup and name in an attempt to cut costs aswell as to not cannibalize sales of the newer MG C and Triumph TR6. So Austin-Healey the makers of the Beautiful 100, 100-6 and 3000 models passed into legend as the British car industry which it once stalwarted descended into decline.
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF CARS CONTENT: Big Healey and the Economy -->
+
+                    <!-- START OF CARS CONTENT: Citroën and her rise & fall -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="citroen-title">
+                        <h3 id="citroen-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Citroën and her rise & fall</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025 | Category: Auto History</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-3xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                A detailed look at the French marque's history, from pioneering designs to bankruptcy and the ultimate failure of the SM.
+                            </p>
+                            <pre class="prose-content text-gray-700 text-base mx-auto">
+Nowadays, perhaps Citroen are known for making small city cars but that wasn't always the case. The brand was founded in 1919 by Andre Citroën; a French industrialist and engineer. Andre had envisioned his marque as the French equivalant of Ford-Creating good cars for regular people. Models like the B12, C4 and the powerful "Rosalie" had made Citroen one of the global superpowers of the auto world in the 20s. But the brands innovation first showed in the 1934 "Traction-Avant"."Unibody" design where the the body is the chassis is now used in almost every single car but the Avant was the first to use it in mass production. The Avant was also the first mass produced front wheel drive car. Infact the Avant was so ahead of its time that designing it bankrupted Citroën who had to sell his company to Michelin.
+
+But by the time Michelin took over completely, the German invasion of France had already begun. Hitler's armies had redirected Citroen to the Nazi war effort but Citroen's head Pierre-Joules Boulanger would not not sit still. He intentionally ordered his employees to work slow and sabotage the trucks they were making for the Wehrmacht. He also gathered some engineers to work in secret in designing actual cars.
+
+Boulanger's efforts had put him squarely in Hitler's hitlist but because of his bravery the 2CV or "Deux Chevaux" was born just after the second world war. The 2CV was not a nice car but it was just what a half destroyed France needed. It too was a clever design. It used a version of Citroen's famous suspension for the first time. It was made to be cheap and usable and a reliable work horse quite literally the name meant "Two Horses" because it could do what two horses could do. The 2CV: A car created in secrecy in occupied France had brought France's economy back to stability.
+
+By the early 50s, Citroen were doing well, but they lacked a modern flagship. The Traction-Avant which at one time was the most advanced car in the world had been in production for 20 years and contemporaries were catching up. So enter the : DS. Citroen's most famous car. It made full use of Citroen's self leveling Hydropneumatic Suspension. A design. which still remains forward thinking today. The DS was the first car to use modern Disc Brakes and it even had power steering in the 1950s. It was sleek, low slung and aerodynamic. Yes, Citroen pioneered the aerodynamic "teardrop shape" in the DS. 
+
+In the 60s Citroen were still doing well and ambition struck them. They wanted to make a flagship sports car. They had intially planned on making a faster version of the DS but eventually ended up designing a whole new car. Their Vision was a V8 powered Gran tourer to rival Ferrari or Jaguar but they eventually settled on a V6 engine. To achieve their goals, Citroen bought out the struggling Maserati in 1968. They had assigned Giulio Alfieri the designer of the famous Maserati "Birdcage" to design the engine in just 6 months. Alfieri came up with a 2.7 litre V6 design based on an existing V8. Their new model was the "SM" which was styled to be modernist and sleek. It was low slung and extremely aerodynamic even for today. The SM had the most advanced version of Citroen's self leveling suspension. It had s power steering system called "DIRAVI" Which is still clever by today's standards. It had lightweight carbon enforced wheels, rain sensitive wipers and was way ahead of its time interior wise. The SM even had a top speed rivalling the Porsche 911 even though it was heavier and front-wheel drive
+
+It was practically a "space-age" design The SM was the culmination of all of Citroen's innovation. It debuted in late 1970 and It was the ultimate Citroen but it was the right car for the wrong time. The global economy was dwindling and the 1973 oil crisis hit hard. The SM was arguably the best , most advanced car on the road but sales were low as people simply couldn't afford cars like it.
+
+Citroen's extensive spending on the failed SM and its purchase of the bleeding Maserati meant that they were once again broke. Citroen had to file for bankruptcy again in 1975. This time being bought out by rivals Peugeot. Where Citroen led innovation Peugeot made boring, safe cars without any thrill. Yes, alot of those boring cars sold well but they lacked passion. Under Peugeot, Citroen lost alot of its charm and originality and the innovators of old were dead. Its ironic, The beautiful SM which should have been Citroen's ultimate triumph is what killed the original Citroen. Yet, cars like the 2CV, Traction-Avant and DS have become staples of France. As iconic as the "Arc De Triomphe" or "Eiffel" Tower
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF CARS CONTENT: Citroën and her rise & fall -->
+
+                    <!-- START OF CARS CONTENT: Star Trek, Beatles and Bond -->
+                    <article class="bg-white p-8 rounded-lg shadow-lg mb-8 post-card-hover" aria-labelledby="star-trek-title">
+                        <h3 id="star-trek-title" class="text-2xl font-bold text-emerald-800 mb-2 text-center">Star Trek, Beatles and Bond</h3>
+                        <p class="text-sm text-gray-500 mb-6 text-center">Published: November 2, 2025 | Category: Anecdote</p>
+
+                        <div class="border-t border-gray-200 pt-6 max-w-3xl mx-auto">
+                            <p class="text-sm italic text-gray-600 mb-4 text-center">
+                                The incredible true story of how Patrick Stewart met Paul McCartney and got to drive an Aston Martin DB5.
+                            </p>
+                            <pre class="prose-content text-gray-700 text-base mx-auto">
+Jean luc Picard, a Beatle and James Bond's ride
+The Aston Martin DB4 and DB5 are regarded as some of the greatest sports cars of all time and Sir Patrick Stewart certainly thought so. He was a mere theatre actor, not yet reaching stardom at the time. Stewart was appearing in a play and one of his costars was none other than Jane Asher, who at the time was dating Sir Paul Mccartney. 
+
+As with all British people, they were at the pub one night and Stewart said that if he had a million pounds, he would buy an Aston Martin. And lo and behold some time later, the Beatles frontman shows up with the keys to his Aston Martin and hands them to the young actor to take for a joyride
+                            </pre>
+                        </div>
+                    </article>
+                    <!-- END OF CARS CONTENT: Star Trek, Beatles and Bond -->
+
+                    <!-- Placeholder for user's car writings -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center text-gray-500">
+                        <p class="text-lg font-medium">Share your passion for diecast, kits, and miniature motoring here!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-gray-800 text-white" aria-labelledby="about-heading">
+            <div class="max-w-3xl mx-auto px-4 text-center">
+                <h2 id="about-heading" class="text-4xl font-extrabold mb-4">About the Author</h2>
+                <p class="text-gray-300 mb-6">
+                    Hi folks, I like to write and say things from time to time and this is essentially an outlet for my thoughts. I like poetry, 60's music and old things in general
+                </p>
+                <p class="text-sm text-emerald-300">
+                    Get in touch: <a href="mailto:shahsafwat12@gmail.com" class="underline hover:text-white transition duration-200">shahsafwat12@gmail.com</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">&copy; 2025 Safwat Journals. All thoughts reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#about" class="text-gray-400 hover:text-emerald-400 transition duration-150">About</a>
+                <span class="text-gray-600">|</span>
+                <a href="#archives" class="text-gray-400 hover:text-emerald-400 transition duration-150">Archives</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Improved JS: accessibility attributes, robust initialization -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Mobile menu
+      const mobileBtn = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileBtn.setAttribute('aria-controls', 'mobile-menu');
+        mobileBtn.addEventListener('click', function () {
+          const isHidden = mobileMenu.classList.toggle('hidden');
+          mobileBtn.setAttribute('aria-expanded', String(!isHidden));
+        });
+
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(item => {
+          item.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+      }
+
+      // Collapsible sections (toggle-header)
+      document.querySelectorAll('.toggle-header').forEach(header => {
+        const targetId = header.getAttribute('data-target');
+        if (!targetId) return;
+        const target = document.getElementById(targetId);
+        const icon = header.querySelector('svg');
+        // Initialize aria-expanded from presence of 'hidden'
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', header.getAttribute('tabindex') || '0');
+        header.setAttribute('aria-controls', targetId);
+        header.setAttribute('aria-expanded', target ? String(!target.classList.contains('hidden')) : 'false');
+
+        const toggle = () => {
+          if (!target) return;
+          target.classList.toggle('hidden');
+          const expanded = !target.classList.contains('hidden');
+          header.setAttribute('aria-expanded', String(expanded));
+          if (icon) icon.classList.toggle('rotate-180');
+        };
+
+        header.addEventListener('click', toggle);
+        header.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle();
+          }
+        });
+      });
+    });
+    </script>
+</body>
+</html>
